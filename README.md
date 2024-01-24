@@ -34,3 +34,5 @@ I will then add the nextButton.eventListener such that if there is no currentQue
 I will also add the handleNextButton function such that if there is no next question, it will show the score of the quiz.
 I will also add the showScore function, such that after showing the score, the user should be able to play the game again.
 After noticing some typo in my button element in JavaScript and also a typo in the disabled attribute and also fixing my cursor by giving it a valid value of not allowed, now when i go on live server, my code is displaying the first question and the answers to select, and when i select the answer, the next button comes on but when i click to move to the next question, it is not responsive.
+Finally managed to get the App to be responsive on liveserver. To fix the problem, i had to debug by using console.log on the showQuestion function, the selectedButton function, selectedAnswer function, nextbutton function and on the score function.
+committed the changes to GitHub.
