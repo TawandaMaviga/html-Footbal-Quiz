@@ -94,12 +94,13 @@ let score = 0;
 function startQuiz(){
     currentQuestionIndex = 0;
     score = 0;
-    console.log ("startQuiz");
+    console.log("startQuiz");
     
     showQuestion();
 }
 
 function showQuestion(){
+    console.log("showQuestion")
     resetState();
     let currentQuestion = questions[currentQuestionIndex];
     let questionNo = currentQuestionIndex + 1;
@@ -126,11 +127,15 @@ function resetState(){
 }
 
 function selectAnswer(a){
+    console.log("selectAnswer");
     const selectedButton = a.target;
+    console.log(selectedButton)
     const isCorrect = selectedButton.dataset.correct === "true";
+    console.log(isCorrect)
     if(isCorrect){
         selectedButton.classList.add("correct");
         score++;
+        console.log(score)
     }else{
         selectedButton.classList.add("incorrect");
     }
@@ -142,6 +147,7 @@ function selectAnswer(a){
 
     });
     nextbutton.style.display = "block";
+    nextbutton.addEventListener("click", handleNextButton);
 }
 
 function showScore(){
@@ -151,14 +157,16 @@ function showScore(){
     nextbutton.style.display = "block";
 }
 
-/*function handleNextButton(){
+function handleNextButton(){
+    nextbutton.removeEventListener("click", handleNextButton);
+    console.log("nextbutton");
     currentQuestionIndex++;
     if(currentQuestionIndex < questions.length){
         showQuestion();
     }else{
         showScore();
     }
-}*/
+}
 startQuiz();
 
 
